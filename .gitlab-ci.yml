@@ -1,0 +1,18 @@
+stages:
+ - build
+ - test
+ - deploy
+build:
+  stage: build
+  script:
+      - echo "Building the project"
+      - python setup.py install
+test:
+  stage: test
+  script:
+      - echo "Running tests"
+      - pytest
+deploy:
+  stage: deploy
+  script:
+      - echo "Deploying application"
